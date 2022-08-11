@@ -47,7 +47,7 @@ dom('#btnSubmit').onclick = () => {
         .then(data => {
             dom('.title h1').innerHTML = data.message
             dom('.title h1').style.color = 'red'
-            if (data.message === 'Đăng ký tài khoản thành công!'){
+            if (data.message === 'Đăng ký thành công!'){
                 dom('.title h1').style.color = 'blue'
                 clearForm()
             }
@@ -82,7 +82,7 @@ const kiemTraGioiTinh = () => {
     const tb = dom('#tbGender')
     if (inputsGender[0].checked === false && inputsGender[1].checked === false) {
         tb.style.display = 'block'
-        tb.innerHTML = 'chưa chọn giới tính'
+        tb.innerHTML = 'Vui lòng chọn giới tính !'
         return false
     } else {
         tb.style.display = 'none'
@@ -98,7 +98,7 @@ const kiemTraEmail = () => {
     if (!regex.test(email)) {
         tb.style.display = 'block'
         tb.style.fontSize = '13px'
-        tb.innerHTML = 'email không đúng định dạng'
+        tb.innerHTML = 'Vui lòng nhập email đúng định dạng !'
         return false
     } else {
         tb.style.display = 'none'
@@ -114,7 +114,7 @@ const kiemTraName = () => {
     if (!regex.test(removeAscent(name))) {
         tb.style.display = 'block'
         tb.style.fontSize = '13px'
-        tb.innerHTML = 'tên phải là chữ'
+        tb.innerHTML = 'Vui lòng nhập tên là chữ !'
         return false
     } else {
         tb.style.display = 'none'
@@ -145,7 +145,7 @@ const kiemTraPassword = () => {
         tb.style.width = '150px'
         tb.style.lineHeight = 1.1
         tb.style.top = '-10px'
-        tb.innerHTML = 'MK từ 6-20 ký tự, có 1 số, 1 chữ hoa, 1 chữ thường, 1 ký tự đặc biệt'
+        tb.innerHTML = 'Nhập mật khẩu từ 6-20 ký tự, có 1 số, 1 chữ hoa, 1 chữ thường, 1 ký tự đặc biệt'
         return false
     } else {
         tb.style.display = 'none'
@@ -162,7 +162,7 @@ const kiemTraPasswordConfirm = () => {
     } else if (passwordConfirm !== password) {
         tb.style.display = 'block'
         tb.style.fontSize = '13px'
-        tb.innerHTML = 'Nhập lại mật khẩu'
+        tb.innerHTML = 'Vui lòng nhập lại mật khẩu !'
         return false
     } else {
         tb.style.display = 'none'
@@ -177,7 +177,7 @@ function kiemTraPhone() {
     const regex = /^[0-9]+$/
     if (!regex.test(phone) || phone.length < 10 || phone.length > 11) {
         tb.style.display = 'block'
-        tb.innerHTML = 'phone phải 10-11 số'
+        tb.innerHTML = 'Số điện thoại từ phải 10-11 con số !'
         tb.style.fontSize = '13px'
         return false
     } else {
