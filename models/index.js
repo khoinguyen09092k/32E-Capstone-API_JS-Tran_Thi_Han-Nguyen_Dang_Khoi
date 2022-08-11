@@ -11,7 +11,7 @@ fetch(url)
                                 <img src="${product.image}" alt="">
                                 <h3>${product.name}</h3>
                                 <p>${product.shortDescription}</p>
-                                <a href="./detail.html?producid=${product.id}">Buy now</a>
+                                <a href="./views/detail.html?producid=${product.id}">Buy now</a>
                                 <span>${product.price}$</span>
                                 </div>
                             </div>`
